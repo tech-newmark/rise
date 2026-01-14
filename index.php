@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 ?>
 <? if (IsModuleInstalled("advertising")): ?>
-	<div class="mb-5 test777">
+	<div class="mb-5 test777sss">
 		<? $APPLICATION->IncludeComponent(
 			"bitrix:advertising.banner",
 			"bootstrap_v4",
