@@ -1,10 +1,10 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 ?>
-<?if (IsModuleInstalled("advertising")):?>
-	<div class="mb-5">
-		<?$APPLICATION->IncludeComponent(
+<? if (IsModuleInstalled("advertising")): ?>
+	<div class="mb-5 test">
+		<? $APPLICATION->IncludeComponent(
 			"bitrix:advertising.banner",
 			"bootstrap_v4",
 			array(
@@ -25,16 +25,16 @@ $APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
 				"CACHE_TIME" => "36000000",
 			),
 			false
-		);?>
+		); ?>
 	</div>
-<?endif?>
+<? endif ?>
 
 <?
 global $trendFilter;
 $trendFilter = array('PROPERTY_TREND' => '4');
 ?>
 <h2>Тренды сезона</h2>
-<?$APPLICATION->IncludeComponent(
+<? $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section",
 	"bootstrap_v4",
 	array(
@@ -135,8 +135,7 @@ $trendFilter = array('PROPERTY_TREND' => '4');
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"PRODUCT_PROPS_VARIABLE" => "prop",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRODUCT_PROPERTIES" => array(
-		),
+		"PRODUCT_PROPERTIES" => array(),
 		"OFFERS_CART_PROPERTIES" => array(
 			0 => "COLOR_REF",
 			1 => "SIZES_SHOES",
@@ -158,5 +157,5 @@ $trendFilter = array('PROPERTY_TREND' => '4');
 		"COMPATIBLE_MODE" => "N",
 	),
 	false
-);?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+); ?>
+<? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
